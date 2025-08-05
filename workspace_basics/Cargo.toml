@@ -1,0 +1,32 @@
+#[package]
+#name = "workspace_basics"
+#version = "0.1.0"
+#edition = "2024"
+
+[workspace]
+members = [
+    "web-server",
+    "shared-utils",
+    "database"
+]
+
+resolver = "2"  # Use resolver version 2 for edition 2021
+
+# Optional: exclude certain directories
+#exclude = [
+#    "examples",
+#    "old-code"
+#]
+
+# Shared dependencies for all workspace members
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+sqlx = "0.8.6"
+
+# Optional: workspace-level package metadata
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"

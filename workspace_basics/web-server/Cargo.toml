@@ -1,0 +1,17 @@
+[package]
+name = "web-server"
+version.workspace = true    # Inherit from workspace
+edition.workspace = true    # Inherit from workspace
+authors.workspace = true    # Inherit from workspace
+
+[dependencies]
+# Use workspace dependencies
+serde.workspace = true
+tokio.workspace = true
+
+# Local workspace dependencies
+shared-utils = { path = "../shared-utils" }
+database = { path = "../database" }
+
+# Crate-specific dependencies
+axum = "0.8.4"
